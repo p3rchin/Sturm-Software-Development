@@ -1272,6 +1272,18 @@ public class Controller implements ActionListener {
 					JOptionPane.showMessageDialog(null, "La casa se ha modificado correctamente", "Información",
 							JOptionPane.INFORMATION_MESSAGE);
 
+					String informacion = "Información actualizada de la casa de apuestas: \n\n\n";
+
+					for (int i = 0; i < alCasa.size(); i++) {
+
+						informacion += "Nombre de la casa: " + alCasa.get(i).getNombre() + "\n" + "Número de sedes: "
+								+ alCasa.get(i).getNumeroSedes() + "\n" + "Presupuesto de la casa: "
+								+ alCasa.get(i).getPresupuesto() + "\n";
+					}
+					
+					JOptionPane.showMessageDialog(null, informacion, "Información",
+							JOptionPane.INFORMATION_MESSAGE);
+
 					ventanaAdministrador.getPanelAdministrarCasa().getNombreCasa().setText("");
 					ventanaAdministrador.getPanelAdministrarCasa().getPresupuesto().setText("");
 					ventanaAdministrador.getPanelAdministrarCasa().getNumeroSedes().setText("");
@@ -1426,6 +1438,16 @@ public class Controller implements ActionListener {
 					JOptionPane.showMessageDialog(null, "La sede se ha editado correctamente", "Información",
 							JOptionPane.INFORMATION_MESSAGE);
 
+					String informacion = "\tInformación actualizada de la sede: \n\n\n";
+
+					for (int i = 0; i < alSede.size(); i++) {
+
+						informacion += "Ubicación de la sede: " + alSede.get(i).getUbicacion() + "\n"
+								+ "Números de empleados: " + alSede.get(i).getnEmpleados() + "\n";
+					}
+
+					JOptionPane.showMessageDialog(null, informacion, "Información", JOptionPane.INFORMATION_MESSAGE);
+
 					ventanaAdministrador.getPanelAdministrarSede().getNuevaUbicacion().setText("");
 					ventanaAdministrador.getPanelAdministrarSede().getNumeroEmpleados2().setText("");
 
@@ -1469,11 +1491,11 @@ public class Controller implements ActionListener {
 
 				if (sedeDAO.eliminarSede(pUbicacion, alSede, fileSede)) {
 
-					JOptionPane.showMessageDialog(null, "eliminado Correctamente");
+					JOptionPane.showMessageDialog(null, "Eliminado correctamente");
 
 				} else {
 
-					JOptionPane.showMessageDialog(null, "No se ha podido eliminar.");
+					JOptionPane.showMessageDialog(null, "No se ha podido eliminar");
 
 				}
 
